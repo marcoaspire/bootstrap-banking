@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top ">
+        <div class="container">      
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
+            </svg>
+          <a href="#" class="navbar-brand">
+            <strong>Banking</strong> 
+          </a>
+    
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Info</a></li>
+            <li class="nav-item"><a href="./login.html" class="nav-link">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <section class="container mt-5">
+        <header>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+            </button>
+            <h2>Account movements</h2>
+        </header>
+        <article>
+            <div class="row">
+                <div class="col-3">
+                    <h4>
+                        Current Balance
+                    </h4>
+                    <h3 class="deposit">$250.00</h3>
+                </div>
+                <div class="col-3">
+                    <h4>
+                        Deposits
+                    </h4>
+                    <h3 class="deposit">$1500.00</h3>
+                </div>
+                <div class="col-3">
+                    <h4>
+                        Withdrawal
+                    </h4>
+                    <h3 class="withdrawal">$1750.00</h3>
+                </div>
+            </div>
+        </article>
+        <table class="table" id="sortTable">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>22/02/01</td>
+                <th scope="row">Deposit</th>
+                <td class="deposit">+$500.00</td>
+                <td>$1000.00</td>
+              </tr>
+              <tr>
+                <td>22/02/02</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$200.00</td>
+                <td>$800.00</td>
+              </tr>
+              <tr>
+                <td>22/02/05</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$100.00</td>
+                <td>$700.00</td>
+              </tr>
+              <tr>
+                <td>22/02/10</td>
+                <th scope="row">Deposit</th>
+                <td class="deposit">+$1000.00</td>
+                <td>$1700.00</td>
+              </tr>
+              <tr>
+                <td>22/02/11</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$500.00</td>
+                <td>$1200.00</td>
+              </tr>
+              <tr>
+                <td>22/02/13</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$200.00</td>
+                <td>$1000.00</td>
+              </tr>
+              <tr>
+                <td>22/02/15</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$250.00</td>
+                <td>$750.00</td>
+              </tr>
+              <tr>
+                <td>22/02/20</td>
+                <th scope="row">Withdrawal</th>
+                <td class="withdrawal">-$500.00</td>
+                <td>$250.00</td>
+              </tr>
+            </tbody>
+          </table>
+        
+           
+        
+
+    </section>
+    
+    <footer class="pie-de-pagina text-center text-md-right bg-dark text-white">
+        <div class="container">
+          <p class="m-0 py-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+            </svg>
+            Contact us:banking@gmail.com  
+          </p>
+        </div>
+      </footer>
+
+    <script>
+    $('#sortTable').DataTable();
+    </script>
+</body>
+</html>

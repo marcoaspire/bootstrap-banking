@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Banking</title>
+  
+</head>
+<body>
+    
+<br>
+    <div class="container mt-5">
+    <!-- COntainer-->
+    <div class="container-fluid h-100"> 
+        <h1 class="center">Banking</h1>
+        <img src="./bank.jpeg" alt="bank-image" class="center" height="340px">
+        <div class="row w-100 mb-5 pb-5">
+            <div class="v-center d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+                    Login
+                </button>
+        
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signup">
+                    Sign Up
+                </button>
+                
+            </div>  
+        </div>
+    </div>
+        <!-- Modal -->
+        <form class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true" action="index.html">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title-login" id="loginLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    
+                        <div class="mt-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#&!]).+$" minlength="7" 
+                            title="It should contain at least one uppercase and lowercase alphabets,
+                            It should contain at least one numerical value,
+                            It should contain at least one special characte,
+                            It should not contain any whitespaces,
+                            The length of the password should more than 7 characters" required> <!-- validate whitespaces-->
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            </div>
+        </form>
+
+        <form class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true" data-dismiss="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title-login" id="loginLabel">Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-holder mt-3">
+                                <p>Fill in the data below.</p>
+                                <form class="requires-validation" novalidate>
+            
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" name="name" placeholder="Name" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" name="last_name" placeholder="Last Name" required>
+                                            </div>
+                
+                                    </div>
+                                    <br>    
+                                    
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="email" name="email" placeholder="E-mail Address" required >
+                                    </div>
+                                    <br>    
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="password" name="password" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#&!]).+$" minlength="7" 
+                                        title="It should contain at least one uppercase and lowercase alphabets,
+                                        It should contain at least one numerical value,
+                                        It should contain at least one special characte,
+                                        It should not contain any whitespaces,
+                                        The length of the password should more than 7 characters">
+                                    </div>
+            
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+                                    <label class="form-check-label">I confirm that all data are correct</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>    
+        
+     
+        
+          
+        
+
+    </div>
+
+    <!-- SECCION PIE DE PÁGINA -->
+<footer class="text-center text-md-right bg-dark text-white">
+    <div class="container">
+      <p class="m-0 py-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+        </svg>
+        banking@gmail.com  
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
